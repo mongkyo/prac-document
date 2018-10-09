@@ -16,15 +16,15 @@ class Pizza(models.Model):
         return self.name
 
 
-class FacebookUser(models.Model):
-    name = models.CharField(max_length=50)
-
-    friend = models.ForeignKey(
-        blank=True,
-        null=True,
-        on_delete=models.CASCADE,
-        related_name='friend',
-    )
-
-    def __str__(self):
-        return self.name
+# class FacebookUser(models.Model):
+#     name = models.CharField(max_length=50)
+#
+#     friend = models.ForeignKey(
+#         blank=True,
+#         null=True,
+#         on_delete=models.CASCADE,
+#         related_name='friend',
+#     )
+#
+#     def __str__(self):
+#         return self.name
