@@ -19,6 +19,8 @@ class Group(models.Model):
     members = models.ManyToManyField(
         Person,
         through='Membership',
+        related_name='group_set',
+        related_query_name='group',
     )
 
     def __str__(self):
