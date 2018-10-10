@@ -34,7 +34,6 @@ INSTALLED_APPS = [
     'fields',
     'foreignkey',
     'many_to_many',
-    'many_too_many',
 
     'django.contrib.admin',
     'django.contrib.auth',

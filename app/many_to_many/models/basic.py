@@ -1,5 +1,10 @@
 from django.db import models
 
+__all__ = (
+    'Topping',
+    'Pizza',
+)
+
 
 class Topping(models.Model):
     name = models.CharField(max_length=50)
@@ -14,17 +19,3 @@ class Pizza(models.Model):
 
     def __str__(self):
         return self.name
-
-
-# class FacebookUser(models.Model):
-#     name = models.CharField(max_length=50)
-#
-#     friend = models.ForeignKey(
-#         blank=True,
-#         null=True,
-#         on_delete=models.CASCADE,
-#         related_name='friend',
-#     )
-#
-#     def __str__(self):
-#         return self.name
