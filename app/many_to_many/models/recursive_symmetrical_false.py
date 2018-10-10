@@ -5,7 +5,7 @@ __all__ = (
 )
 
 class InstagramUser(models.Model):
-    # - 누군가를 follow하는 사람목록
+    # - 다른사람이 자신을 follow하는 사람목록
     #   followers
     #   팔로워 목록
     # - 자신이 다른사람을 follow한 사람 목록
