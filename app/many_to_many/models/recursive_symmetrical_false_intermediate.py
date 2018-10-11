@@ -35,6 +35,59 @@ class TwitterUser(models.Model):
 
     def __str__(self):
         return self.name
+    @property
+    def followers(self):
+        """
+        :return: 나를 follow하는 다른 TwitterUser QuerySet
+        """
+
+    @property
+    def following(self):
+        """
+        :return: 내가 follow하는 다른 TwitterUser QuerySet
+        """
+
+
+    @property
+    def block_list(self):
+        """
+
+        return: 내가 block하는 다른 TwitterUser QuerySet
+        """
+
+    def follow(self, user):
+        """
+        user를 follow하는 Relation을 생성
+            1. 이미 존재한다면 만들지 않는다
+            2. user가 block_list에 속한다면 만들지 않는다
+        :param user: TwitterUser
+        :return: tuple(Relation instance
+        """
+
+    def block(self, user):
+        """
+        user를 block하는 Relation을 생성
+            1. 이미 존재한다면 만들지 않는다
+            2. user가 following에 속한다면 해제시키고 만든다
+        :param user: TwitterUser
+        :return: tuple(Relation instance
+        """
+
+
+    @property
+    def follower_relations(self):
+        """
+        :return: 나를 follow하는 Relation QuerySet
+        """
+
+
+    @property
+    def followee_relations(self):
+        """
+        :return: 내가 follow하는 Relation QuerySet
+        """
+
+
 
 
 class Relation(models.Model):
