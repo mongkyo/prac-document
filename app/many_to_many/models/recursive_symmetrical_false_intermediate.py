@@ -88,8 +88,6 @@ class TwitterUser(models.Model):
         """
 
 
-
-
 class Relation(models.Model):
     CHOICE_RELATION_TYPE = (
         ('f', 'follow'),
@@ -98,12 +96,14 @@ class Relation(models.Model):
     from_user = models.ForeignKey(
         TwitterUser,
         on_delete=models.CASCADE,
-        related_name='relation_by_from_user',
+        related_name='from_user_relations',
+        related_query_name='from_user_relation',
     )
     to_user = models.ForeignKey(
         TwitterUser,
         on_delete=models.CASCADE,
-        related_name='relation_by_to_user',
+        related_name='to_user_relations',
+        related_query_name='to_user_relation',
     )
 
     relation_type = models.CharField(
