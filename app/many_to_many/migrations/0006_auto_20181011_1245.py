@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='group',
             name='members',
-            field=models.ManyToManyField(related_name='group_set', related_query_name='group', through='many_to_many.Membership', to='many_to_many.Person'),
+            field=models.ManyToManyField(related_name='group_set', related_query_name='group', through='many_to_many.Membership', to='many_to_many.RelatedUser'),
         ),
         migrations.AlterField(
             model_name='relation',

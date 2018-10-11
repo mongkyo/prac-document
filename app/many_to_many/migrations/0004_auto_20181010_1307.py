@@ -28,7 +28,7 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='Person',
+            name='RelatedUser',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=128)),
@@ -42,11 +42,11 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='membership',
             name='person',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='many_to_many.Person'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='many_to_many.RelatedUser'),
         ),
         migrations.AddField(
             model_name='group',
             name='members',
-            field=models.ManyToManyField(through='many_to_many.Membership', to='many_to_many.Person'),
+            field=models.ManyToManyField(through='many_to_many.Membership', to='many_to_many.RelatedUser'),
         ),
     ]

@@ -23,8 +23,14 @@ class Restaurant(models.Model):
 
 
 class Waiter(models.Model):
-    restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
+    restaurant = models.ForeignKey(
+        Restaurant,
+        on_delete=models.CASCADE,
+    )
     name = models.CharField(max_length=50)
 
     def __str__(self):
-        return f'{self.name} the waiter at {self.restaurant}'
+        return f'{name} the waiter at {restaurant}'.formate(
+            name=self.name,
+            restaurant=self.restaurant,
+        )
